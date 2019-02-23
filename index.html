@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Epic pro</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="shower/themes/material/styles/styles.css">
+    <link rel="stylesheet" href="prism/prism.css">
+    <link rel="stylesheet" href="shower/nicothin.css">
+    <style>
+        .shower {
+            --color-key: #ff6300;
+            font-family: 'PT Sans', sans-serif;
+        }
+        .slide::after {
+            display: none;
+        }
+    </style>
+</head>
+<body class="shower list">
+
+    <header class="caption">
+        <h1>Epic pro</h1>
+        <p>Презентация для видео о про-курсе по вёрстке</p>
+    </header>
+
+    <section class="slide">
+        <h2 class="shout shrink">Входной порог</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Входной порог</h2>
+        <ol>
+            <li>Базовые знания HTML, CSS, javascript.</li>
+            <li>Представление о git (git-scm.com), регистрация на github.com.</li>
+            <li>Начальные знания о работе в терминале.</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <pre class="code  language-bash">
+            <code># bash</code>
+            <code>cd epic-book/        </code>
+            <code>cd ..               </code>
+            <code>mkdir new-directory </code>
+            <code>touch src/style.scss</code>
+            <code>rm -rf new-directory</code>
+            <code>rm src/style.scss   </code>
+            <code> </code>
+            <code>git init</code>
+            <code>git add .</code>
+            <code>git commit -m "Наверстал упущенное"</code>
+            <code>git remote add origin git@github.com:user/repo.git</code>
+            <code>git push -u origin master</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="code  language-html">
+            <code>&lt;!-- БЭМ как методология --></code>
+            <code> </code>
+            <code>&lt;section class="promo"></code>
+            <code>  &lt;div class="promo__inner"></code>
+            <code>    &lt;h2 class="promo__title">БЭМ имитирует пространство имён&lt;/h2></code>
+            <code>    &lt;ol class="promo__features"></code>
+            <code>      &lt;li>Случайно повторить селектор сложно, код предсказуем.&lt;/li></code>
+            <code>      &lt;li>Самодокументируется — по классу ясно ЧТО это.&lt;/li></code>
+            <code>    &lt;/ol></code>
+            <code>    &lt;a href="https://ru.bem.info/" class="btn  btn--lg">Погнали!&lt;/a></code>
+            <code>  &lt;/div></code>
+            <code>&lt;/section></code>
+            <code> </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="code  language-pug">
+            <code>//- БЭМ как методология и pug</code>
+            <code> </code>
+            <code>section.promo</code>
+            <code>  .promo__inner</code>
+            <code>    h2.promo__title БЭМ имитирует пространство имён</code>
+            <code>    ol.promo__features</code>
+            <code>      li Случайно повторить селектор сложно, код предсказуем.</code>
+            <code>      li Самодокументируется — по классу ясно ЧТО это.</code>
+            <code>    a.btn.btn--lg(href='https://ru.bem.info/') Погнали</code>
+            <code> </code>
+            <code> </code>
+            <code> </code>
+            <code> </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="code  language-pug">
+            <code>extends ../pug/layout.pug</code>
+            <code> </code>
+            <code>block meta</code>
+            <code>  title Epic books</code>
+            <code> </code>
+            <code>block header</code>
+            <code>  +page-header()</code>
+            <code>    +logo('/')</code>
+            <code>      img(src='img/logo.svg', alt='Epic books', width='64', height='15')</code>
+            <code>  +main-nav('3')</code>
+            <code> </code>
+            <code>block content</code>
+            <code>  h1 Epic books. Книги, которые стоит прочесть!</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="code  language-scss">
+            <code>// promo.scss</code>
+            <code> </code>
+            <code>.promo {</code>
+            <code>  margin-bottom: 30px;</code>
+            <code>  background-color: $color-main;</code>
+            <code>  color: $text-color;</code>
+            <code> </code>
+            <code>  &__inner {</code>
+            <code>    max-width: ($screen-lg - 20);</code>
+            <code>    margin: auto;</code>
+            <code>    padding: 0 20px;</code>
+            <code>  }</code>
+            <code>}</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="code  language-js">
+            <code>function styles() {</code>
+            <code>  return src('./scss/style.scss')</code>
+            <code>    .pipe(plumber())</code>
+            <code>    .pipe(sourcemaps.init())</code>
+            <code>    .pipe(sass())</code>
+            <code>    .pipe(postcss([</code>
+            <code>      autoprefixer({browsers: ['last 2 version']}),</code>
+            <code>    ]))</code>
+            <code>    .pipe(sourcemaps.write('/'))</code>
+            <code>    .pipe(dest('./css/'))</code>
+            <code>    .pipe(browserSync.stream());</code>
+            <code>}</code>
+            <code>exports.styles = styles;</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <pre class="code  language-scss">
+            <code>// promo.scss</code>
+            <code> </code>
+            <code>.promo {</code>
+            <code><<<<<<< HEAD</code>
+            <code>  display: flex;</code>
+            <code>=======</code>
+            <code>  display: grid;</code>
+            <code>>>>>>>> master</code>
+            <code>  margin-bottom: 30px;</code>
+            <code>  background-color: $color-main;</code>
+            <code>  color: $text-color;</code>
+            <code>}</code>
+            <code> </code>
+        </pre>
+    </section>
+
+    <!-- <div class="progress"></div> -->
+
+    <script src="shower/shower.min.js"></script>
+    <script src="prism/prism.js"></script>
+
+</body>
+</html>
