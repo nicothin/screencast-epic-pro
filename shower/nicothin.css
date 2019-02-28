@@ -214,3 +214,77 @@ input[type="number"] {
 .slide .list-compact li {
   margin-bottom: 0;
 }
+
+.overlay{
+  position:fixed;
+  animation:100s scroll infinite linear;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color: #FFD1C8; /* #e95131; */
+  background-image:url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/footer_lodyas.png);
+  background-blend-mode: color-burn;
+}
+
+@keyframes scroll{
+  100%{
+    background-position:0px -3000px;
+  }
+}
+
+svg {
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.sk-l {
+  position: absolute;
+  left: 345px;
+  z-index: 2;
+  background: url('../pictures/epic-logo.svg');
+  background-size: 336px 169px;
+  background-position: 0 0;
+  animation-duration: 0.6s;
+  animation-delay: 1.4s;
+  animation-fill-mode: both;
+}
+
+.sk-r {
+  position: absolute;
+  right: 345px;
+  z-index: 2;
+  background: url('../pictures/epic-logo.svg');
+  background-size: 336px 169px;
+  background-position: 100% 0;
+  animation-duration: 0.6s;
+  animation-delay: 1.8s;
+  animation-fill-mode: both;
+}
+
+.te-ep {
+  position: absolute;
+  right: 396px;
+  top: 221px;
+  z-index: 2;
+  background: url('../pictures/epic-logo.svg');
+  background-size: 336px 169px;
+  background-position: -64px -14px;
+  animation-duration: 0.6s;
+  animation-delay: 2.4s;
+  animation-fill-mode: both;
+}
+
+.te-sk {
+  position: absolute;
+  right: 398px;
+  top: 306px;
+  z-index: 2;
+  background: url('../pictures/epic-logo.svg');
+  background-size: 336px 169px;
+  background-position: -62px -103px;
+  animation-duration: 0.6s;
+  animation-delay: 2.8s;
+  animation-fill-mode: both;
+}
